@@ -4,12 +4,5 @@
   "question": "Exploit S2-052 with an XML body sent to the REST showcase to run commands and get a shell.",
   "category": "WEB",
   "difficulty": 3,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "insecure-deserialization",
-    "xstream",
-    "remote-code-execution",
-    "java",
-    "struts2"
-  ]
+  "evidence_kind": "SECRET"
 }
