@@ -1,0 +1,69 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Send the REST showcase an XML body it deserializes, run a command and read /ctf/flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "FLAG{%s}"
+      },
+      "dev": "FLAG{dev-vulhub-struts2-s2-052}",
+      "hints": [
+        "The REST plugin picks a handler from the Content-Type. Read the S2-052 advisory on what reads XML bodies.",
+        "The flag is at /ctf/flag."
+      ],
+      "steps": [
+        {
+          "key": "framework",
+          "title": "Identify the framework",
+          "prompt": "Which Java web framework serves the REST showcase? (name only)",
+          "check": {
+            "answer": [
+              "struts",
+              "struts2",
+              "struts 2",
+              "apache struts",
+              "apache struts 2",
+              "apache struts2"
+            ]
+          }
+        },
+        {
+          "key": "advisory",
+          "title": "Name the advisory",
+          "prompt": "Which Struts security bulletin covers this bug?",
+          "check": {
+            "answer": [
+              "s2-052",
+              "s2052"
+            ]
+          }
+        },
+        {
+          "key": "library",
+          "title": "Find the component",
+          "prompt": "Which XML library deserializes the request body? (library name)",
+          "check": {
+            "answer": [
+              "xstream"
+            ]
+          }
+        },
+        {
+          "key": "class",
+          "title": "Name the weakness",
+          "prompt": "Which vulnerability class is this?",
+          "check": {
+            "answer": [
+              "deserialization",
+              "insecure deserialization",
+              "xml deserialization",
+              "unsafe deserialization"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

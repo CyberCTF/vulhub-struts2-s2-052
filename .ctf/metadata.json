@@ -1,7 +1,7 @@
 {
   "title": "Apache Struts2 S2-052 REST Plugin XStream RCE",
   "description": "The Struts2 2.5.12 REST showcase, vulnerable to S2-052 (CVE-2017-9805): the REST plugin's XStreamHandler unmarshals any XML request body, so a crafted XML payload (a gadget chain) runs commands on the server.",
-  "question": "Exploit S2-052 with an XML body sent to the REST showcase to run commands and get a shell.",
+  "question": "Exploit S2-052 with an XML body sent to the REST showcase to run commands and read /ctf/flag.",
   "category": "WEB",
   "difficulty": 3,
   "evidence_kind": "SECRET"
